@@ -1,0 +1,59 @@
+<ion-app>
+  <ion-list>
+    <ion-list-header>PERFIL DEL TURISTA</ion-list-header>
+  
+    <ion-item>
+      <ion-label>Género</ion-label>
+      <ion-select placeholder="Seleccione uno">
+        <ion-select-option value="f">Femenino</ion-select-option>
+        <ion-select-option value="m">Masculino</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Rango de edad</ion-label>
+      <ion-select  okText="Aceptar" cancelText="Cancelar">
+        <ion-select-option value="rango1">De 0 a 15</ion-select-option>
+        <ion-select-option value="rango2">De 16 a 30</ion-select-option>
+        <ion-select-option value="rango3">De 31 a 50</ion-select-option>
+        <ion-select-option value="rango4">De 51 en adelante</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Tipo de alojamiento deseado</ion-label>
+      <ion-select multiple="true" cancelText="Cancelar" okText="Aceptar">
+        <ion-select-option value="hotel">Hotel</ion-select-option>
+        <ion-select-option value="motel">Motel</ion-select-option>
+        <ion-select-option value="hostal">Hostal</ion-select-option>
+        <ion-select-option value="aparta">Apartahotel</ion-select-option>
+        <ion-select-option value="airbnb">Airbnb</ion-select-option>
+        <ion-select-option value="finca">Finca</ion-select-option>
+        <ion-select-option value="posada">Posada nativa</ion-select-option>
+        <ion-select-option value="camping">Camping</ion-select-option>
+        <ion-select-option value="casamigo">Casa de amigos</ion-select-option>
+        <ion-select-option value="casamovil">Casa móvil</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Tipo de turismo</ion-label>
+      <ion-select multiple="true">
+        <ion-select-option value="deportivo" selected>Deportivo</ion-select-option>
+        <ion-select-option value="cultural">Cultural</ion-select-option>
+        <ion-select-option value="recreativo" selected>Recreativo</ion-select-option>
+        <ion-select-option value="ecologico">Ecológico</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header></ion-list-header>
+  
+    <ion-item>
+      <ion-label>Encuestador</ion-label>
+      <ion-select [compareWith]="compareWith">
+        <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-app>
