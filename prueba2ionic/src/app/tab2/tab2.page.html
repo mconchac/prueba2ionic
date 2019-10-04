@@ -1,10 +1,11 @@
 <ion-app>
   <ion-list>
-    <ion-list-header>PERFIL DEL TURISTA</ion-list-header>
+      <img src="assets/turistas.jpg">
+    <ion-card-title class= "text-center">  PERFIL DEL TURISTA</ion-card-title>
   
     <ion-item>
       <ion-label>Género</ion-label>
-      <ion-select placeholder="Seleccione uno">
+      <ion-select cancelText="Cancelar" okText="Aceptar">
         <ion-select-option value="f">Femenino</ion-select-option>
         <ion-select-option value="m">Masculino</ion-select-option>
       </ion-select>
@@ -12,7 +13,7 @@
   
     <ion-item>
       <ion-label>Rango de edad</ion-label>
-      <ion-select  okText="Aceptar" cancelText="Cancelar">
+      <ion-select okText="Aceptar" cancelText="Cancelar">
         <ion-select-option value="rango1">De 0 a 15</ion-select-option>
         <ion-select-option value="rango2">De 16 a 30</ion-select-option>
         <ion-select-option value="rango3">De 31 a 50</ion-select-option>
@@ -22,7 +23,7 @@
   
     <ion-item>
       <ion-label>Tipo de alojamiento deseado</ion-label>
-      <ion-select multiple="true" cancelText="Cancelar" okText="Aceptar">
+      <ion-select cancelText="Cancelar" okText="Aceptar">
         <ion-select-option value="hotel">Hotel</ion-select-option>
         <ion-select-option value="motel">Motel</ion-select-option>
         <ion-select-option value="hostal">Hostal</ion-select-option>
@@ -38,20 +39,22 @@
   
     <ion-item>
       <ion-label>Tipo de turismo</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option value="deportivo" selected>Deportivo</ion-select-option>
+      <ion-select multiple="true" cancelText="Cancelar" okText="Aceptar">
+        <ion-select-option value="deportivo">Deportivo</ion-select-option>
         <ion-select-option value="cultural">Cultural</ion-select-option>
-        <ion-select-option value="recreativo" selected>Recreativo</ion-select-option>
+        <ion-select-option value="recreativo">Recreativo</ion-select-option>
         <ion-select-option value="ecologico">Ecológico</ion-select-option>
       </ion-select>
     </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-list-header></ion-list-header>
+
+    <ion-item>
+        <ion-label>Fecha y hora:</ion-label>
+           <ion-datetime displayFormat="D MMM YYYY H:mm" min="2019" max="2020" value="Seleccione"></ion-datetime>
+    </ion-item>
   
     <ion-item>
       <ion-label>Encuestador</ion-label>
-      <ion-select [compareWith]="compareWith">
+      <ion-select [compareWith]="compareWith" cancelText="Cancelar" okText="Aceptar">
         <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
       </ion-select>
     </ion-item>
