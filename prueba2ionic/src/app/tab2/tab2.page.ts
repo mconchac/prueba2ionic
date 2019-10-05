@@ -24,6 +24,11 @@ export class Tab2Page {
       id: 3,
       first: 'Charlie',
       last: 'Rosenburg',
+    },
+    {
+      id: 4,
+      first: 'Pedro',
+      last: 'Pérez',
     }
   ];
 
